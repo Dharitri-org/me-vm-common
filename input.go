@@ -4,6 +4,7 @@ import (
 	"math/big"
 )
 
+// CallType specifies the type of SC invocation (in terms of asynchronicity)
 type CallType int
 
 const (
@@ -58,6 +59,12 @@ type VMInput struct {
 	// The sender will not be charged based on GasProvided, only on the gas burned,
 	// so it doesn't cost the sender more to have a higher gas limit.
 	GasProvided uint64
+
+	// OriginalTxHash
+	OriginalTxHash []byte
+
+	// CurrentTxHash
+	CurrentTxHash []byte
 }
 
 // ContractCreateInput VM input when creating a new contract.
@@ -72,6 +79,9 @@ type ContractCreateInput struct {
 	// For Iele VM, to convert a .iele file to this assembled byte array, see
 	// src/github.com/Dharitri-org/me-vm/iele/compiler/compiler.AssembleIeleCode
 	ContractCode []byte
+
+	// ContractCodeMetadata is the code metadata of the contract being created.
+	ContractCodeMetadata []byte
 }
 
 // ContractCallInput VM input when calling a function from an existing contract
