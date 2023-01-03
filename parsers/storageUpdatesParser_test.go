@@ -4,7 +4,7 @@ import (
 	"encoding/hex"
 	"testing"
 
-	vmcommon "github.com/Dharitri-org/me-vm-common"
+	"github.com/Dharitri-org/me-vm-common"
 	"github.com/stretchr/testify/require"
 )
 

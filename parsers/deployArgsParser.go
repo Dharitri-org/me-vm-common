@@ -1,8 +1,6 @@
 package parsers
 
-import (
-	vmcommon "github.com/Dharitri-org/me-vm-common"
-)
+import vmcommon "github.com/Dharitri-org/me-vm-common"
 
 type deployArgsParser struct {
 }
